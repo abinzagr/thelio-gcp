@@ -1,0 +1,14 @@
+config {
+  type: "table",
+  description: "Nombre de trajets quotidiens depuis les données publiques Austin Bikeshare",
+  tags: ["demo", "public", "bike"]
+}
+
+SELECT
+  DATE(start_time) AS ride_date,
+  COUNT(*) AS total_trips,
+  AVG(duration_minutes) AS avg_duration_minutes
+FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips`
+WHERE start_time IS NOT NULL
+GROUP BY 1
+ORDER BY 1
