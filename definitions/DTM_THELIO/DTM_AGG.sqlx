@@ -1,0 +1,20 @@
+config {
+    type: "incremental",
+    schema: "DTM_THELIO",
+    name: "DTM_AGG",
+    uniqueKey: ["place_id"],
+    tags: [""],
+    bigquery: {
+        partitionBy: "dt"
+    }
+}
+
+SELECT
+  location_key,
+  dt,
+  place_id,
+  country_name
+FROM
+  ${ref("exemple")}
+LIMIT
+  1000
