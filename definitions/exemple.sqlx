@@ -1,0 +1,14 @@
+config {
+  type: "view", 
+  description: "Vue transformée des cas COVID-19 pour chaque pays",
+  tags: ["covid", "europe", "public"]
+}
+
+SELECT
+location_key,
+date as dt,
+place_id,
+country_name
+FROM
+  `thelio-apm-20250411.DLK_PUBLIC.covid_cases`
+limit 1000
