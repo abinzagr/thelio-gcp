@@ -1,5 +1,5 @@
 defaultProject: thelio-apm-20250411
-defaultLocation: US
+defaultLocation: EU
 defaultDataset: dataform
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.19
