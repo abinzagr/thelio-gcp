@@ -1,0 +1,12 @@
+config {
+    type :"table",
+    schema: "DTM_THELIO",
+    name: "Ahmad"
+}
+
+SELECT
+  area,region,population,code,capital,name
+FROM
+  `thelio-apm-20250411.DTM_THELIO.COUNTRIES`
+LIMIT
+  1000
