@@ -1,0 +1,20 @@
+config {
+    type :"table",
+    schema: "DTM_THELIO",
+    name: "COUNTRIES_JULIEN"
+}
+
+SELECT distinct
+  co.area,
+  co.region,
+  co.population,
+  covid.country_name as code,
+  co.capital,
+  co.name
+FROM
+  `thelio-apm-20250411.DTM_THELIO.COUNTRIES_VIDE_JULIEN` as co
+inner join 
+    `thelio-apm-20250411.DLK_PUBLIC.covid_cases` as covid on upper(covid.country_name) = upper(co.name)
+
+LIMIT
+  1000

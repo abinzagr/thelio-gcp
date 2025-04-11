@@ -1,7 +1,7 @@
 config {
     type :"table",
     schema: "DTM_THELIO",
-    name: "Ahmad"
+    name: "COUNTRIES_VIDE_JULIEN"
 }
 
 SELECT
