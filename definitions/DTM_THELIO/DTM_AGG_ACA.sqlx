@@ -1,0 +1,15 @@
+config {
+    type: "table",
+    schema: "DTM_THELIO",
+    name: "COUNTRIES_ACA",
+    tags: [""]
+}
+
+SELECT
+  pays.area, pays.region, pays.name, covid.country_code
+FROM
+thelio-apm-20250411.DTM_THELIO.COUNTRIES as pays
+INNER JOIN thelio-apm-20250411.DLK_PUBLIC.covid_cases as covid
+ on covid.country_name=pays.name
+LIMIT
+  1000
